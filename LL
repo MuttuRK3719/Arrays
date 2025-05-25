@@ -1,0 +1,63 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+       Main ll=new Main();
+       ll.insertF(1);
+       ll.insertF(2);
+       ll.insertF(3);
+       ll.insertF(4);
+       ll.insertF(5);
+       ll.insertL(19);
+       ll.insertIndex(100,2);
+       ll.display();
+    }
+    Node head;
+    Node tail;
+    int value;
+    int size;
+    void insertIndex(int val,int index){
+        Node temp=head;
+        for(int i=0;i<index-1;i++){
+            temp=temp.next;
+        }
+        Node node=new Node(val);
+        node.next=temp.next;
+        temp.next=node;
+        size++;
+    }
+    void insertL(int val){
+        Node node=head;
+        for(int i=0;i<size-1;i++){
+            node=node.next;
+        }
+        node.next=new Node(val);
+    }
+    void display(){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.value+"-->");
+            temp=temp.next;
+        }
+        System.out.print("END");
+    }
+    void insertF(int val){
+        Node node=new Node(val);
+        node.next=head;
+        head=node;
+        if(tail==null) tail=head;
+        size++;
+    }
+    private class Node{
+        Node next;
+        int value;
+        Node(int value){
+            this.value=value;
+        }
+        Node(int value,Node next){
+            this.value=value;
+            this.next=next;
+        }
+    }
+}
