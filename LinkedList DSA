@@ -1,1 +1,27 @@
-
+class Main {
+ Node head;
+    Node tail;
+    int value;
+    int size;
+    public static void main(String[] args) {
+static boolean cyclicList(Node node){
+        Node first=head;
+        Node second=head;
+        while(first!=null&&first.next!=null){
+            first=first.next.next;
+            second=second.next;
+            if(first==second)return true;
+        }
+        return false;
+    }
+ private class Node{
+        Node next;
+        int value;
+        Node(int value){
+            this.value=value;
+        }
+        Node(int value,Node next){
+            this.value=value;
+            this.next=next;
+        }
+    }}
