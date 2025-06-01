@@ -47,4 +47,17 @@ class Main {
         arr[high]=temp;
         return i+1;
     }
+//Cyclic Sort
+static void cyclicSort(int []arr){
+       int i=0;
+       while(i<arr.length){
+           int currect=arr[i]-1;
+           if(arr[i]!=arr[currect]){
+               int temp=arr[i];
+               arr[i]=arr[currect];
+               arr[currect]=temp;
+           }
+          else i++;
+       }
+   }
 }
