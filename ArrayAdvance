@@ -27,3 +27,10 @@ check the target number is present or not
         if(arr[index]==target) return index;
         else  return findIndex(arr,index+1,target);
     }
+
+
+sorted or not
+ static boolean arraySorted(int arr[],int index){
+        if(index==arr.length-1) return true;
+        return arr[index]<arr[index+1]&&arraySorted(arr,index+1);
+    }
