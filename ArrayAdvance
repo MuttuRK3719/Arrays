@@ -14,3 +14,8 @@ public static ArrayList<ArrayList<Integer>> pos(int []arr){
         }
         return result;
     }
+check the target number is present or not
+ static boolean check(int []arr,int index,int target){
+        if(index==arr.length) return false;
+        return arr[index]==target||check(arr,index+1,target);
+    }
