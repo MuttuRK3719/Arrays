@@ -25,3 +25,19 @@ public int majorityElement(int[] nums) {
         }
         return maxVal;
     }
+
+
+public int majorityElement(int[] nums) {
+        int count = 0, majorityEle = nums[0];
+        for (int ele : nums) {
+            if (ele == majorityEle) {
+                count++;
+            } else
+                count--;
+            if (count == 0) {
+                majorityEle = ele;
+                count++;
+            }
+        }
+        return majorityEle;
+    }
