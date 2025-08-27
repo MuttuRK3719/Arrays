@@ -7,7 +7,19 @@ Example 2:
 Input: nums = [2,0,1]
 Output: [0,1,2]
 
-  
+    public void sortColors(int[] nums) {
+        int low = 0, mid = 0, high = nums.length - 1;
+        while (mid <= high) {
+            if (nums[mid] == 0)
+              //swap
+                nums[low] = nums[low] + nums[mid] - (nums[mid++] = nums[low++]);
+            else if (nums[mid] == 2)
+              //for 2 not increment my be 0
+                nums[high] = nums[mid] + nums[high] - (nums[mid] = nums[high--]);
+            else
+                mid++;
+        }
+    }
 
 public void sortColors(int[] nums) {
         int index = 0;
