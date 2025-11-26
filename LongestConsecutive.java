@@ -16,3 +16,26 @@ public int longestConsecutive(int[] nums) {
         }
         return longest;
     }
+
+
+ public int longestConsecutive(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        if (nums.length == 0)
+            return 0;
+        int longest = 1;
+        for (int ele : nums) {
+            set.add(ele);
+        }
+        for (int ele : set) {
+            if (!set.contains(ele - 1)) {
+                int x = ele;
+                int count = 1;
+                while (set.contains(x + 1)) {
+                    x++;
+                    count++;
+                }
+                longest = Math.max(longest, count);
+            }
+        }
+        return longest;
+    }
